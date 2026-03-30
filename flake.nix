@@ -26,9 +26,8 @@
             self.packages.${system}.mytool
           ];
           shellHook = ''
-            if [ -f ${self.packages.${system}.kubectl-aliases} ]; then
-              source ${self.packages.${system}.kubectl-aliases}
-            fi
+            # Source kubectl aliases
+            source ${self.packages.${system}.kubectl-aliases}
           '';
         };
       }
