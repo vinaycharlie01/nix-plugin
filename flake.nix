@@ -26,6 +26,11 @@
             self.packages.${system}.kubectl-aliases
             self.packages.${system}.mytool
           ];
+          shellHook = ''
+            if [ -f ${self.packages.${system}.kubectl-aliases} ]; then
+              source ${self.packages.${system}.kubectl-aliases}
+            fi
+          '';
         };
       }
     );
