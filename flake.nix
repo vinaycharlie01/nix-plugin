@@ -11,15 +11,14 @@
       let
         pkgs = import nixpkgs { inherit system; };
       in {
-        packages.${system} = {
+        packages = {
           gcloudplugin = import ./plugins/gcloud { inherit pkgs; };
           kubectl-instana = import ./plugins/kubectl-instana { inherit pkgs; };
           mytool = import ./plugins/mytool { inherit pkgs; };
+          default = import ./plugins/mytool { inherit pkgs; };
         };
 
-        defaultPackage.${system} = self.packages.${system}.mytool;
-
-        devShells.${system}.default = pkgs.mkShell {
+        devShells.default = pkgs.mkShell {
           buildInputs = [
             self.packages.${system}.gcloudplugin
             self.packages.${system}.kubectl-instana
