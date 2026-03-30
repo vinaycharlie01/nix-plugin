@@ -23,7 +23,6 @@
           buildInputs = [
             self.packages.${system}.gcloudplugin
             self.packages.${system}.kubectl-instana
-            self.packages.${system}.kubectl-aliases
             self.packages.${system}.mytool
           ];
           shellHook = ''
