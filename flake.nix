@@ -27,7 +27,7 @@
           ];
           shellHook = ''
             # Source kubectl aliases
-            source ${self.packages.${system}.kubectl-aliases}
+            source ${self.packages.${system}.kubectl-aliases}/share/kubectl-aliases/.kubectl_aliases
           '';
         };
       }
