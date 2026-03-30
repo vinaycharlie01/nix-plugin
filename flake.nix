@@ -14,6 +14,7 @@
         packages = {
           gcloudplugin = import ./plugins/gcloud { inherit pkgs; };
           kubectl-instana = import ./plugins/kubectl-instana { inherit pkgs; };
+          kubectl-aliases = import ./plugins/kubectl-aliases { inherit pkgs; };
           mytool = import ./plugins/mytool { inherit pkgs; };
           default = import ./plugins/mytool { inherit pkgs; };
         };
@@ -22,6 +23,7 @@
           buildInputs = [
             self.packages.${system}.gcloudplugin
             self.packages.${system}.kubectl-instana
+            self.packages.${system}.kubectl-aliases
             self.packages.${system}.mytool
           ];
         };
