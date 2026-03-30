@@ -18,7 +18,7 @@
 
           mytool = import ./plugins/mytool { inherit pkgs; };
         };
-        defaultPackage = self.packages.${system}.mytool
+        defaultPackage = self.packages.${system}.mytool;
         devShells.default = pkgs.mkShell {
           buildInputs = [
             self.packages.${system}.gcloudplugin
